@@ -1,0 +1,15 @@
+<Solution>
+  <Folder Name="/ApiGateways/" />
+  <Folder Name="/BackendService/" />
+  <Folder Name="/BackendService/AuthService/">
+    <Project Path="BackendService/AuthService/Authservice.Domain/Authservice.Domain.csproj" Id="9a166cf2-de01-49c9-9824-7c140c9cdecc" />
+  </Folder>
+  <Folder Name="/BackendService/CartService/" />
+  <Folder Name="/BackendService/CatalogService/" />
+  <Folder Name="/BackendService/OrderService/" />
+  <Folder Name="/BackendService/PaymentService/" />
+  <Folder Name="/BackendService/Shared/" />
+  <Folder Name="/BackendService/StockService/" />
+  <Folder Name="/Docs/" />
+  <Folder Name="/FrontendService/" />
+</Solution>
