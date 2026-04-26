@@ -2,6 +2,7 @@
   <Folder Name="/ApiGateways/" />
   <Folder Name="/BackendService/" />
   <Folder Name="/BackendService/AuthService/">
+    <Project Path="BackendService/AuthService/AuthService.API/AuthService.API.csproj" Id="6d5db2ea-bf56-4fb5-8bac-401e32f484ef" />
     <Project Path="BackendService/AuthService/AuthService.Application/AuthService.Application.csproj" Id="d461fff5-c910-4a48-8aa9-f1949853e5da" />
     <Project Path="BackendService/AuthService/Authservice.Domain/Authservice.Domain.csproj" Id="9a166cf2-de01-49c9-9824-7c140c9cdecc" />
     <Project Path="BackendService/AuthService/AuthService.Infrastructure/AuthService.Infrastructure.csproj" Id="43dc8fcb-c787-4f3d-82ff-55f17b344a59" />
