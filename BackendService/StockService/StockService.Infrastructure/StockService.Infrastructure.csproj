@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StockService.Application\StockService.Application.csproj" />
+    <ProjectReference Include="..\StockService.Domain\StockService.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

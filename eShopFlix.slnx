@@ -2,14 +2,40 @@
   <Folder Name="/ApiGateways/" />
   <Folder Name="/BackendService/" />
   <Folder Name="/BackendService/AuthService/">
+    <Project Path="BackendService/AuthService/AuthService.Application/AuthService.Application.csproj" Id="d461fff5-c910-4a48-8aa9-f1949853e5da" />
     <Project Path="BackendService/AuthService/Authservice.Domain/Authservice.Domain.csproj" Id="9a166cf2-de01-49c9-9824-7c140c9cdecc" />
+    <Project Path="BackendService/AuthService/AuthService.Infrastructure/AuthService.Infrastructure.csproj" Id="43dc8fcb-c787-4f3d-82ff-55f17b344a59" />
   </Folder>
-  <Folder Name="/BackendService/CartService/" />
-  <Folder Name="/BackendService/CatalogService/" />
-  <Folder Name="/BackendService/OrderService/" />
-  <Folder Name="/BackendService/PaymentService/" />
-  <Folder Name="/BackendService/Shared/" />
-  <Folder Name="/BackendService/StockService/" />
+  <Folder Name="/BackendService/CartService/">
+    <Project Path="BackendService/CartService/CartService.Application/CartService.Application.csproj" Id="549a8e88-489c-44b6-ae64-f34803e74831" />
+    <Project Path="BackendService/CartService/CartService.Domain/CartService.Domain.csproj" Id="f5e9e977-3f06-458a-9b7b-840b3af2c54e" />
+    <Project Path="BackendService/CartService/CartService.Infrastructure/CartService.Infrastructure.csproj" Id="ea339f83-016b-41ae-8994-bda462af5c41" />
+  </Folder>
+  <Folder Name="/BackendService/CatalogService/">
+    <Project Path="BackendService/CatalogService/CatalogService.Application/CatalogService.Application.csproj" Id="0728dedc-7942-4aef-a1af-79779320886d" />
+    <Project Path="BackendService/CatalogService/CatalogService.Domain/CatalogService.Domain.csproj" Id="57aa345e-9884-41dc-937e-f675a5760428" />
+    <Project Path="BackendService/CatalogService/CatalogService.Infrastructure/CatalogService.Infrastructure.csproj" Id="b9b6b76b-299d-4ae8-bdeb-a40195c045a9" />
+  </Folder>
+  <Folder Name="/BackendService/OrderService/">
+    <Project Path="BackendService/OrderService/OrderService.Application/OrderService.Application.csproj" Id="034d6f8e-20e0-48f0-896e-7160a6c767b2" />
+    <Project Path="BackendService/OrderService/OrderService.Domain/OrderService.Domain.csproj" Id="01239313-895f-4ace-a085-71f437042cfc" />
+    <Project Path="BackendService/OrderService/OrderService.Infrastructure/OrderService.Infrastructure.csproj" Id="08514bdb-682d-4816-85d1-e624a920336d" />
+  </Folder>
+  <Folder Name="/BackendService/PaymentService/">
+    <Project Path="BackendService/PaymentService/PaymentService.Application/PaymentService.Application.csproj" Id="2acce4ef-fea5-445f-9e6c-73c1e07799b4" />
+    <Project Path="BackendService/PaymentService/PaymentService.Domain/PaymentService.Domain.csproj" Id="6ee127c3-7801-4537-95e8-66a080bf0bbe" />
+    <Project Path="BackendService/PaymentService/PaymentService.Infrastructure/PaymentService.Infrastructure.csproj" Id="386dd45d-737d-4f14-8baf-b1846c1b1212" />
+  </Folder>
+  <Folder Name="/BackendService/Shared/">
+    <Project Path="BackendService/Shared/Shared.Application/Shared.Application.csproj" Id="ac8d59b3-80bb-4b1f-a03c-6071ee1b07d3" />
+    <Project Path="BackendService/Shared/Shared.Domain/Shared.Domain.csproj" Id="fea7d3a7-9a4b-4955-b5e5-57a97506ee62" />
+    <Project Path="BackendService/Shared/Shared.Infrastructure/Shared.Infrastructure.csproj" Id="387bcea0-d46c-4deb-ba06-9be8ec747148" />
+  </Folder>
+  <Folder Name="/BackendService/StockService/">
+    <Project Path="BackendService/StockService/StockService.Application/StockService.Application.csproj" Id="cdfa4040-0af7-417a-bbb7-10a7159da8a1" />
+    <Project Path="BackendService/StockService/StockService.Domain/StockService.Domain.csproj" Id="03d6422f-9a8e-43c7-babd-cb30bff696e9" />
+    <Project Path="BackendService/StockService/StockService.Infrastructure/StockService.Infrastructure.csproj" Id="0a4e16d1-3952-408e-b235-4a3808164e88" />
+  </Folder>
   <Folder Name="/Docs/" />
   <Folder Name="/FrontendService/" />
 </Solution>
