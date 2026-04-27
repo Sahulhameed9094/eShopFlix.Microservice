@@ -1,5 +1,7 @@
 <Solution>
-  <Folder Name="/ApiGateways/" />
+  <Folder Name="/ApiGateways/">
+    <Project Path="ApiGateways/OcelotApiGateway/OcelotApiGateway.csproj" Id="d34d3ed2-7de6-4f47-9ad2-a5b260c0f86e" />
+  </Folder>
   <Folder Name="/BackendService/" />
   <Folder Name="/BackendService/AuthService/">
     <Project Path="BackendService/AuthService/AuthService.API/AuthService.API.csproj" Id="6d5db2ea-bf56-4fb5-8bac-401e32f484ef" />
