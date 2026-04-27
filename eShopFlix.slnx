@@ -40,5 +40,8 @@
     <Project Path="BackendService/StockService/StockService.Infrastructure/StockService.Infrastructure.csproj" Id="0a4e16d1-3952-408e-b235-4a3808164e88" />
   </Folder>
   <Folder Name="/Docs/" />
-  <Folder Name="/FrontendService/" />
+  <Folder Name="/FrontendService/">
+    <Project Path="FrontendService/eShopFlix.Support/eShopFlix.Support.csproj" Id="0fd35a8b-45ae-44ad-a4f9-71c68ece32ab" />
+    <Project Path="FrontendService/eShopFlix.Web/eShopFlix.Web.csproj" Id="d26da4b3-782a-43a1-8511-8da0fd8f3053" />
+  </Folder>
 </Solution>
