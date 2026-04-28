@@ -1,6 +1,7 @@
 <Solution>
   <Folder Name="/ApiGateways/">
     <Project Path="ApiGateways/OcelotApiGateway/OcelotApiGateway.csproj" Id="d34d3ed2-7de6-4f47-9ad2-a5b260c0f86e" />
+    <Project Path="ApiGateways/YARPApiGateWay/YARPApiGateWay.csproj" Id="13d2e6b1-585e-4087-b59c-b2e7350ce118" />
   </Folder>
   <Folder Name="/BackendService/" />
   <Folder Name="/BackendService/AuthService/">
@@ -42,6 +43,6 @@
   <Folder Name="/Docs/" />
   <Folder Name="/FrontendService/">
     <Project Path="FrontendService/eShopFlix.Support/eShopFlix.Support.csproj" Id="0fd35a8b-45ae-44ad-a4f9-71c68ece32ab" />
-    <Project Path="FrontendService/eShopFlix.Web/eShopFlix.Web.csproj" Id="d26da4b3-782a-43a1-8511-8da0fd8f3053" />
+    <Project Path="FrontendService/eShopFlix.Web/eShopFlix.Web.csproj" Id="edec66b7-830d-4e3c-a26b-0160960efa9b" />
   </Folder>
 </Solution>
