@@ -11,4 +11,9 @@
     <ProjectReference Include="..\OrderService.Domain\OrderService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Persistence\Repositories\" />
+    <Folder Include="Persistence\" />
+  </ItemGroup>
+
 </Project>

@@ -16,6 +16,7 @@
     <Project Path="BackendService/CartService/CartService.Infrastructure/CartService.Infrastructure.csproj" Id="ea339f83-016b-41ae-8994-bda462af5c41" />
   </Folder>
   <Folder Name="/BackendService/CatalogService/">
+    <Project Path="BackendService/CatalogService/CatalogService.API/CatalogService.API.csproj" Id="86d289ff-976c-43e7-8e10-2a0901b893cd" />
     <Project Path="BackendService/CatalogService/CatalogService.Application/CatalogService.Application.csproj" Id="0728dedc-7942-4aef-a1af-79779320886d" />
     <Project Path="BackendService/CatalogService/CatalogService.Domain/CatalogService.Domain.csproj" Id="57aa345e-9884-41dc-937e-f675a5760428" />
     <Project Path="BackendService/CatalogService/CatalogService.Infrastructure/CatalogService.Infrastructure.csproj" Id="b9b6b76b-299d-4ae8-bdeb-a40195c045a9" />

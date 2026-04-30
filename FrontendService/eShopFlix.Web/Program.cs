@@ -11,11 +11,22 @@ builder.Services.AddHttpClient("HttpClient", client =>
     client.BaseAddress = new Uri(builder.Configuration["ApigatewayAddress"]);
 });
 
+
+// Register the AuthServiceHttpClient with the HttpClient
 builder.Services.AddScoped<AuthServiceClient>(provider =>
 {
     var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
     var httpClient = httpClientFactory.CreateClient("HttpClient");
     return new AuthServiceClient(httpClient);
+});
+
+
+// Register the CatalogServiceClient with the HttpClient
+builder.Services.AddScoped<CatalogServiceClient>(provider =>
+{
+    var httpClientFactory = provider.GetRequiredService<IHttpClientFactory>();
+    var httpClient = httpClientFactory.CreateClient("HttpClient");
+    return new CatalogServiceClient(httpClient);
 });
 
 
