@@ -1,24 +1,27 @@
-/*using Ocelot.DependencyInjection;
-using Ocelot.Middleware;
-
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
-
-app.MapGet("/", () => "Hello World!");
-
-app.Run();*/
-
-
+using Microsoft.IdentityModel.Tokens;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Configuration.AddJsonFile("ocelot.json");
-
-// Register Ocelot API Gateway services in the dependency injection container.
-// This configures the Ocelot middleware to handle API routing, authentication, rate limiting, and request/response transformation.
 builder.Services.AddOcelot();
+
+var endPointAuthKey = builder.Configuration["Keys:EndPointAuthKey"];
+builder.Services.AddAuthentication().AddJwtBearer(endPointAuthKey, options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
+});
 
 var app = builder.Build();
 

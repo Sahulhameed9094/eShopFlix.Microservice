@@ -3,9 +3,11 @@ using AuthService.Application.DTOs;
 using AuthService.Application.Repositories;
 using AuthService.Application.Services.Abstractions;
 using AutoMapper;
-// Alias for BCrypt.Net.BCrypt to reduce verbosity and improve code readability
-// Allows using BC.HashPassword() instead of BCrypt.Net.BCrypt.HashPassword()
-// Used for secure password hashing and verification operations in user authentication
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using BC = BCrypt.Net.BCrypt;
 
 namespace AuthService.Application.Services.Implmentations
@@ -14,10 +16,15 @@ namespace AuthService.Application.Services.Implmentations
     {
         IUserRepository _userRepository;
         IMapper _mapper;
-        public UserAppService(IUserRepository userRepository, IMapper mapper)
+        private readonly IConfiguration _configuration;
+
+        public UserAppService(IUserRepository userRepository,
+                              IMapper mapper,
+                              IConfiguration configuration)
         {
             _userRepository = userRepository;
             _mapper = mapper;
+            _configuration = configuration;
         }
 
         public IEnumerable<UserDTO> GetAllUsers()
@@ -48,7 +55,9 @@ namespace AuthService.Application.Services.Implmentations
                 bool isValidPassword = BC.Verify(loginDTO.Password, user.Password);
                 if (isValidPassword)
                 {
-                    return _mapper.Map<UserDTO>(user);
+                    var UserModel= _mapper.Map<UserDTO>(user);
+                    UserModel.Token = GenerateJwtToken(UserModel);
+                    return UserModel;
                 }
                 else
                 {
@@ -72,5 +81,29 @@ namespace AuthService.Application.Services.Implmentations
                 return false; // User already exists
             }
         }
+
+
+        private string GenerateJwtToken(UserDTO user)
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            int ExpireMinutes = Convert.ToInt32(_configuration["Jwt:ExpireMinutes"]);
+
+            var claims = new[] {
+                             new Claim(JwtRegisteredClaimNames.Sub, user.Name),
+                             new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                             new Claim("Roles", string.Join(",",user.Roles)),
+                             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                             };
+
+            var token = new JwtSecurityToken(_configuration["Jwt:Issuer"],
+                                            _configuration["Jwt:Audience"],
+                                            claims,
+                                            expires: DateTime.UtcNow.AddMinutes(ExpireMinutes), //token expiry minutes
+                                            signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
     }
 }

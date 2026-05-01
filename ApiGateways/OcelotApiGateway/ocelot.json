@@ -10,10 +10,10 @@
         }
       ],
       "UpstreamPathTemplate": "/auth/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST" ]
     },
     {
-      "DownstreamPathTemplate": "/api/Catalog/{everything}",
+      "DownstreamPathTemplate": "/api/catalog/{everything}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
@@ -22,7 +22,25 @@
         }
       ],
       "UpstreamPathTemplate": "/catalog/{everything}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/product/{everything}",
+      "DownstreamScheme": "https",
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "eShopFlixSecretKey@12345678"
+      },
+      "RouteClaimsRequirement": {
+        "Roles": "Admin"
+      },
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7265
+        }
+      ],
+      "UpstreamPathTemplate": "/product/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST" ]
     }
   ],
   "GlobalConfiguration": {

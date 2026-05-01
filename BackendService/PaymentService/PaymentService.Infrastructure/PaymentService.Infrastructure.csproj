@@ -11,4 +11,9 @@
     <ProjectReference Include="..\PaymentService.Domain\PaymentService.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataAccess\" />
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
